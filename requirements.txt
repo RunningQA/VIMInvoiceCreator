@@ -1,0 +1,12 @@
+altgraph==0.17.2
+Babel==2.10.3
+InvoiceGenerator @ git+file:///Users/jeandelisseen/Projects/InvoiceGenerator@0d0aab53bd4efc877b8e804558f1abf5998fa166
+macholib==1.16
+Pillow==9.2.0
+pyinstaller==5.3
+pyinstaller-hooks-contrib==2022.8
+PySimpleGUI==4.60.3
+pytz==2022.1
+qrcode==7.3.1
+qrplatba==0.5.0
+reportlab==3.6.11
