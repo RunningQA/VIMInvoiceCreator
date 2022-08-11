@@ -1,12 +1,20 @@
 altgraph==0.17.2
+attrs==22.1.0
 Babel==2.10.3
-InvoiceGenerator @ git+file:///Users/jeandelisseen/Projects/InvoiceGenerator@0d0aab53bd4efc877b8e804558f1abf5998fa166
+iniconfig==1.1.1
+InvoiceGenerator @ git+file:///Users/jeandelisseen/Projects/InvoiceGenerator@12e9fc7a76efced9c5f037d79c2dab1cdcf28418
 macholib==1.16
+packaging==21.3
 Pillow==9.2.0
+pluggy==1.0.0
+py==1.11.0
 pyinstaller==5.3
 pyinstaller-hooks-contrib==2022.8
+pyparsing==3.0.9
 PySimpleGUI==4.60.3
+pytest==7.1.2
 pytz==2022.1
 qrcode==7.3.1
 qrplatba==0.5.0
 reportlab==3.6.11
+tomli==2.0.1
