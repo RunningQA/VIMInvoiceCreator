@@ -8,12 +8,10 @@ import datetime
 from InvoiceGenerator.api import Invoice, Item, Client, Provider, Creator
 from InvoiceGenerator.pdf import SimpleInvoice
 
-# function to create and save pdf invoice
-
 def generate_invoice(client_name, client_address, client_zipcode, client_city, client_country, client_vatid,
                     supplier_name, supplier_address, supplier_zipcode, supplier_city, supplier_country,
                     supplier_bank_account, number_of_items, price, product_description, tax_perc, number, po_number,
-                    invoice_creator, filename, filefolder):
+                    invoice_creator, filename, filefolder): # function to create and save pdf invoice
     today = datetime.date.today()
     filestring = filefolder + '/' + filename + '.PDF'
     os.environ["INVOICE_LANG"] = "nl"
@@ -34,4 +32,3 @@ def generate_invoice(client_name, client_address, client_zipcode, client_city, c
     docu = SimpleInvoice(invoice)
     docu.gen(filestring,
              generate_qr_code=False)  # you can put QR code by setting the #qr_code parameter to ‘True’
-

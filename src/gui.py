@@ -74,8 +74,7 @@ while True:
         v20 = values['-CREATOR-']
         v21 = values['-FILENAME-']
         v22 = values['-FILEFOLDER-']
-        GenerateInvoice(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v17, v18, v16, v19, v14, v15, v20, v21, v22)
+        generate_invoice(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v17, v18, v16, v19, v14, v15, v20, v21, v22)
         window.close()
-
 
 window.close()
