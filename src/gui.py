@@ -1,3 +1,6 @@
+"""
+The GUI file creates the GUI and sends the input values to generate.py.
+"""
 #import necessary packages and python functions
 
 import PySimpleGUI as sg

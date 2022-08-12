@@ -1,5 +1,8 @@
-# import python libraries
+"""
+The Generate file takes input from the GUI and creates the PDF.
+"""
 
+# import python libraries
 import os
 import datetime
 from InvoiceGenerator.api import Invoice, Item, Client, Provider, Creator
@@ -31,3 +34,4 @@ def GenerateInvoice(client_name, client_address, client_zipcode, client_city, cl
     docu = SimpleInvoice(invoice)
     docu.gen(filestring,
              generate_qr_code=False)  # you can put QR code by setting the #qr_code parameter to ‘True’
+
