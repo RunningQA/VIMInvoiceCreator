@@ -10,7 +10,7 @@ from InvoiceGenerator.pdf import SimpleInvoice
 
 # function to create and save pdf invoice
 
-def GenerateInvoice(client_name, client_address, client_zipcode, client_city, client_country, client_vatid,
+def generate_invoice(client_name, client_address, client_zipcode, client_city, client_country, client_vatid,
                     supplier_name, supplier_address, supplier_zipcode, supplier_city, supplier_country,
                     supplier_bank_account, number_of_items, price, product_description, tax_perc, number, po_number,
                     invoice_creator, filename, filefolder):
