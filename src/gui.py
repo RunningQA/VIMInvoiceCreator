@@ -46,8 +46,8 @@ layout = [
 
 window = sg.Window('PDF Invoice Creator for VIM', layout)
 
+# pylint: disable=no-else-break
 while True:
-
     event, values = window.read()
     if event in (sg.WINDOW_CLOSED, 'CANCEL'):
         break
