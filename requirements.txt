@@ -2,7 +2,6 @@ altgraph==0.17.2
 attrs==22.1.0
 Babel==2.10.3
 iniconfig==1.1.1
-InvoiceGenerator @ git+file:///Users/jeandelisseen/Projects/InvoiceGenerator@12e9fc7a76efced9c5f037d79c2dab1cdcf28418
 macholib==1.16
 packaging==21.3
 Pillow==9.2.0
@@ -18,3 +17,6 @@ qrcode==7.3.1
 qrplatba==0.5.0
 reportlab==3.6.11
 tomli==2.0.1
+VimInvoiceCreator @ git+https://github.com/RunningQA/VIMInvoiceCreator@8d2c8c6a40b4bdf8d00e0de29d322ddaf2651c7f
+pylint==2.14.5
+
