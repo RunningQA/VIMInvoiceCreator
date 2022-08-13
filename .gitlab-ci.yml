@@ -23,10 +23,10 @@ pytest:
   - cd test/;pytest -v
 
 #deploy
-MSDeploy:
+deploy:
   stage: Deploy
   script:
-  - echo "test ms depoly"
+  - echo "test ms deploy"
   - cd src/
   - pyinstaller -F src/*.py
   tags:
