@@ -29,6 +29,6 @@ deploy:
   script:
   - echo "test ms deploy"
   - cd src/
-  - pyinstaller -F src/*.py
+  - pyinstaller -F gui.py
   tags:
   - macos
