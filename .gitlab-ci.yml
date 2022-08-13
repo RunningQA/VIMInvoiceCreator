@@ -21,3 +21,13 @@ pytest:
   stage: Test
   script:
   - cd test/;pytest -v
+
+#deploy
+MSDeploy:
+  stage: Deploy
+  script:
+  - echo "test ms depoly"
+  - cd src/
+  - pyinstaller -F src/*.py
+  tags:
+  - macos
