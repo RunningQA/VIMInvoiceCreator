@@ -29,6 +29,7 @@ deploy:
   script:
   - echo "test ms deploy"
   - cd src/
+  - env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.8.0
   - pyinstaller -F gui.py
   tags:
   - macos
