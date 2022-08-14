@@ -30,6 +30,7 @@ deploy:
   - echo "test ms deploy"
   - cd src/
   #- env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.5.0
+  - xcode-select --install
   - SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.4.sdk MACOSX_DEPLOYMENT_TARGET=12.4 pyenv install 3.5.0
   - pyinstaller -F gui.py
   tags:
