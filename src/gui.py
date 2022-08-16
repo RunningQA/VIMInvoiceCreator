@@ -28,8 +28,8 @@ layout = [
     [sg.Text('IBAN', size=(15, 1)), sg.Input(key='-SUPPLIER_BANKACCOUNT-')],
     [sg.Text(' ')],
     [sg.Text('FACTUUR HEADER GEGEVENS')],
-    [sg.Text('Factuurnummer', size =(15, 1)), sg.Input(key='-INVOICE_NUMBER-')],
-    [sg.Text('PO nummer', size=(15, 1)), sg.Input(key='-PO-')],
+    [sg.Text('Factuurnummer', size =(15, 1)), sg.Input(key='-INVOICE_NUMBER-', do_not_clear=False)],
+    [sg.Text('PO nummer', size=(15, 1)), sg.Input(key='-PO-', do_not_clear=False)],
     [sg.Text('Aangemaakt door', size=(15, 1)), sg.Input(key='-CREATOR-')],
     [sg.Text(' ')],
     [sg.Text('FACTUUR LINE ITEMS')],
@@ -39,7 +39,7 @@ layout = [
     [sg.Text('BTW %', size=(15, 1)), sg.Input(key='-TAX-')],
     [sg.Text(' ')],
     [sg.Text('BESTANDSNAAM & FOLDERLOCATIE')],
-    [sg.Text('Bestandsnaam', size=(15, 1)), sg.Input(key='-FILENAME-')],
+    [sg.Text('Bestandsnaam', size=(15, 1)), sg.Input(key='-FILENAME-', do_not_clear=False)],
     [sg.Text("Choose a file: "), sg.Input(key='-FILEFOLDER-'), sg.FolderBrowse()],
     [sg.Button('SUBMIT'), sg.Button('CANCEL')]
 ]
@@ -74,7 +74,7 @@ while True:
         v20 = values['-CREATOR-']
         v21 = values['-FILENAME-']
         v22 = values['-FILEFOLDER-']
-        generate_invoice(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v12, v17, v18, v16, v19, v14, v15, v20, v21, v22)
-        window.close()
+        generate_invoice(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v13, v12, v17, v18, v16, v19, v14, v15, v20, v21, v22)
+        #window.close()
 
 window.close()

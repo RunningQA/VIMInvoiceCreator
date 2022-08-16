@@ -12,7 +12,7 @@ from InvoiceGenerator.pdf import SimpleInvoice
 # pylint: disable=too-many-locals
 def generate_invoice(client_name, client_address, client_zipcode, client_city, client_country, client_vatid,
                     supplier_name, supplier_address, supplier_zipcode, supplier_city, supplier_country,
-                    supplier_bank_account, number_of_items, price, product_description, tax_perc, number, po_number,
+                    supplier_bank_account, supplier_vatid, number_of_items, price, product_description, tax_perc, number, po_number,
                     invoice_creator, filename, filefolder):
     """function to generate pdf invoice"""
     today = datetime.date.today()
@@ -21,7 +21,7 @@ def generate_invoice(client_name, client_address, client_zipcode, client_city, c
     client = Client(client_name, address=client_address, zip_code=client_zipcode, city=client_city,
                     country=client_country, vat_id=client_vatid)
     provider = Provider(supplier_name, address=supplier_address, zip_code=supplier_zipcode, city=supplier_city,
-                        country=supplier_country, bank_account=supplier_bank_account)
+                        country=supplier_country, bank_account=supplier_bank_account, vat_id=supplier_vatid)
     creator = Creator(invoice_creator)
     invoice = Invoice(client, provider, creator)
     invoice.add_item(Item(count=number_of_items, price=price, description=product_description, tax=tax_perc))
