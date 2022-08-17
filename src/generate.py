@@ -31,7 +31,7 @@ def generate_invoice(client_name, client_address, client_zipcode, client_city, c
     invoice.taxable_date = today
     invoice.date = today
     invoice.generate_breakdown_vat()
-    invoice.use_tax = True
+    invoice.use_tax = False
     docu = SimpleInvoice(invoice)
     docu.gen(filestring,
              generate_qr_code=False)  # you can put QR code by setting the #qr_code parameter to ‘True’
