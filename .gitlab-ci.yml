@@ -28,7 +28,6 @@ deploy:
   stage: Deploy
   script:
   - echo "test ms deploy"
-  - make clean
   - ./configure
   - env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.5.0
   - xcode-select --install
