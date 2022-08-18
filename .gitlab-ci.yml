@@ -28,7 +28,7 @@ deploy:
   stage: Deploy
   script:
   - echo "test ms deploy"
-  - env cmd apt-get install python3-dev && apt-get install python-dev
+  #- cmd apt-get install python3-dev && apt-get install python-dev
   #- ./configure
   #- env PYTHON_CONFIGURE_OPTS="--enable-framework" pyenv install 3.10.4
   #- xcode-select --install

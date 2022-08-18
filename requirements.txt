@@ -10,6 +10,7 @@ pluggy==1.0.0
 py==1.11.0
 pyinstaller==5.3
 pyinstaller-hooks-contrib==2022.8
+python-dev-tools==2022.5.27
 pyparsing==3.0.9
 PySimpleGUI==4.60.3
 pytest==7.1.2
