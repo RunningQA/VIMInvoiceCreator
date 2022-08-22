@@ -6,7 +6,7 @@ The Generate file takes input from the GUI and creates the PDF.
 import os
 import datetime
 from InvoiceGenerator.api import Invoice, Item, Client, Provider, Creator
-from InvoiceGenerator.pdf import SimpleInvoice
+from InvoiceGenerator.pdf import SimpleInvoice, CorrectingInvoice
 
 # pylint: disable=too-many-arguments
 # pylint: disable=too-many-locals
@@ -31,7 +31,10 @@ def generate_invoice(client_name, client_address, client_zipcode, client_city, c
     invoice.taxable_date = today
     invoice.date = today
     invoice.generate_breakdown_vat()
-    invoice.use_tax = False
+    invoice.use_tax = True
+    #invoice.original = "INVEP299-1"
+    #invoice.reason = "Artikelen teruggestuurd"
     docu = SimpleInvoice(invoice)
-    docu.gen(filestring,
-             generate_qr_code=False)  # you can put QR code by setting the #qr_code parameter to ‘True’
+    #docu = CorrectingInvoice(invoice)
+    docu.gen(filestring)
+    #docu.gen(filestring, generate_qr_code=False)  # you can put QR code by setting the #qr_code parameter to ‘True’
