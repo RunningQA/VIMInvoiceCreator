@@ -6,7 +6,8 @@ The Generate file takes input from the GUI and creates the PDF.
 import os
 import datetime
 from InvoiceGenerator.api import Invoice, Item, Client, Provider, Creator
-from InvoiceGenerator.pdf import SimpleInvoice, CorrectingInvoice
+from InvoiceGenerator.pdf import SimpleInvoice
+#from InvoiceGenerator.pdf import CorrectingInvoice
 
 # pylint: disable=too-many-arguments
 # pylint: disable=too-many-locals
