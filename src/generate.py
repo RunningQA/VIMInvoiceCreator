@@ -6,15 +6,14 @@ The Generate file takes input from the GUI and creates the PDF.
 import os
 import datetime
 from InvoiceGenerator.api import Invoice, Item, Client, Provider, Creator
-from InvoiceGenerator.pdf import SimpleInvoice
-#from InvoiceGenerator.pdf import CorrectingInvoice
+from InvoiceGenerator.pdf import SimpleInvoice, CorrectingInvoice
 
 # pylint: disable=too-many-arguments
 # pylint: disable=too-many-locals
 def generate_invoice(client_name, client_address, client_zipcode, client_city, client_country, client_vatid,
                     supplier_name, supplier_address, supplier_zipcode, supplier_city, supplier_country,
                     supplier_bank_account, supplier_vatid, number_of_items, price, product_description, tax_perc, number, po_number,
-                    invoice_creator, filename, filefolder):
+                    invoice_creator, filename, filefolder, invoice_type):
     """function to generate pdf invoice"""
     today = datetime.date.today()
     filestring = filefolder + '/' + filename + '.PDF'
@@ -25,6 +24,8 @@ def generate_invoice(client_name, client_address, client_zipcode, client_city, c
                         country=supplier_country, bank_account=supplier_bank_account, vat_id=supplier_vatid)
     creator = Creator(invoice_creator)
     invoice = Invoice(client, provider, creator)
+    #invoice.add_item(Item(count=100, price="2.65", description="Steunprofiel, steek 50", tax="0"))
+    #invoice.add_item(Item(count=20, price="8.43", description="Kruimellade tbv brobankrat", tax="12"))
     invoice.add_item(Item(count=number_of_items, price=price, description=product_description, tax=tax_perc))
     invoice.currency = "€"
     invoice.number = number
@@ -33,9 +34,11 @@ def generate_invoice(client_name, client_address, client_zipcode, client_city, c
     invoice.date = today
     invoice.generate_breakdown_vat()
     invoice.use_tax = True
-    #invoice.original = "INVEP299-1"
-    #invoice.reason = "Artikelen teruggestuurd"
-    docu = SimpleInvoice(invoice)
-    #docu = CorrectingInvoice(invoice)
+    if invoice_type == 'Normal':
+        docu = SimpleInvoice(invoice)
+    elif invoice_type == 'Credit':
+        docu = CorrectingInvoice(invoice)
+        invoice.original = "INVEP359"
+        invoice.reason = "Artikelen teruggestuurd"
     docu.gen(filestring)
     #docu.gen(filestring, generate_qr_code=False)  # you can put QR code by setting the #qr_code parameter to ‘True’

@@ -8,6 +8,7 @@ from generate import generate_invoice
 
 # GUI
 layout = [
+    [sg.Radio('Normal Invoice', 1, enable_events=True, default=True, key='-NORMAL_INVOICE-'), sg.Radio('Credit Nota',1, enable_events=True, key='-CREDIT_NOTA-')],
     [sg.Text('Please enter all necessary invoice data:')],
     [sg.Text(' ')],
     [sg.Text('KLANTGEGEVENS')],
@@ -33,10 +34,8 @@ layout = [
     [sg.Text('Aangemaakt door', size=(15, 1)), sg.Input(key='-CREATOR-')],
     [sg.Text(' ')],
     [sg.Text('FACTUUR LINE ITEMS')],
-    [sg.Text('Product', size=(15, 1)), sg.Input(key='-PRODUCT_DESCRIPTION-')],
-    [sg.Text('Aantal', size=(15, 1)), sg.Input(key='-COUNT-')],
-    [sg.Text('Stuksprijs', size=(15, 1)), sg.Input(key='-ITEM_PRICE-')],
-    [sg.Text('BTW %', size=(15, 1)), sg.Input(key='-TAX-')],
+    [sg.Text('Product', size=(15, 1)), sg.Input(key='-PRODUCT_DESCRIPTION-'), sg.Text('Aantal', size=(5, 1)), sg.Input(key='-COUNT-'),
+    sg.Text('Stuksprijs', size=(10, 1)), sg.Input(key='-ITEM_PRICE-'), sg.Text('BTW %', size=(5, 1)), sg.Input(key='-TAX-')],
     [sg.Text(' ')],
     [sg.Text('BESTANDSNAAM & FOLDERLOCATIE')],
     [sg.Text('Bestandsnaam', size=(15, 1)), sg.Input(key='-FILENAME-', do_not_clear=False)],
@@ -74,7 +73,11 @@ while True:
         v20 = values['-CREATOR-']
         v21 = values['-FILENAME-']
         v22 = values['-FILEFOLDER-']
-        generate_invoice(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v13, v12, v17, v18, v16, v19, v14, v15, v20, v21, v22)
+        if values['-NORMAL_INVOICE-'] == True:
+            v23 = 'Normal'
+        elif values['-CREDIT_NOTA-'] == True:
+            v23 = 'Credit'
+        generate_invoice(v1, v2, v3, v4, v5, v6, v7, v8, v9, v10, v11, v13, v12, v17, v18, v16, v19, v14, v15, v20, v21, v22, v23)
         #window.close()
 
 window.close()
