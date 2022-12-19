@@ -3,7 +3,7 @@ attrs==22.1.0
 Babel==2.10.3
 iniconfig==1.1.1
 InvoiceGenerator @ git+https://github.com/RunningQA/InvoiceGenerator@12e9fc7a76efced9c5f037d79c2dab1cdcf28418
-macholib==1.16
+macholib==1.16p
 packaging==21.3
 Pillow==9.2.0
 pluggy==1.0.0
